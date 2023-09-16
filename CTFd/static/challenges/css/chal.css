@@ -1,0 +1,127 @@
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/bg1.jpg");
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+   ::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+.chal-left {
+    position: fixed;
+    padding: 4%;
+    top: 25%;
+    left: 0;
+    bottom: 25%;
+    height: 100%;
+    width: 50%;
+    color: white;
+}
+
+.vertical-line {
+    top: 25%;
+    bottom: 25%;
+    background-color: white;
+    position:fixed;
+    left: 49.9%;
+    width: 1px;
+}
+
+.chal-right {
+    padding: 4%;
+    position: fixed;
+    top:25%;
+    right:0;
+    bottom:25%;
+    width: 50%;
+    color: white;
+
+}
+
+.chal-list {
+    overflow:scroll;
+    position: fixed;
+    bottom: 10%;
+    width: 45%;
+    top: 25%;
+}
+
+.challenge {
+    border: 1px solid white;
+    display: inline-block;
+    width: 130px;
+    height: 70px;
+    margin: 10px;
+    background-color: rgba(249,249,249,0.11);
+    text-align: center;
+    padding: 6px;
+    color: white;
+
+}
+
+.challenge:hover {
+  color: #e2dedb;
+}
+
+.chal-name {
+    color: white;
+}
+
+.chal-score {
+    color: white;
+}
+
+@media only screen and (max-width: 850px) {
+    .chal-left {
+        position: fixed;
+        padding: 4%;
+        top: 50%;
+        left: 0;
+        bottom: 0%;
+        height: 50%;
+        width: 100%;
+        color: white;
+        z-index: 4000;
+    }
+
+    .vertical-line {
+        display: none;
+    }
+
+    .chal-right {
+        padding: 4%;
+        position: fixed;
+        top:10%;
+        left:0;
+        height: 50%;
+        bottom: 49%;
+        width: 100%;
+        color: white;
+
+    }
+
+    .chal-list {
+        overflow:scroll;
+        position: fixed;
+        bottom: 0%;
+        width: 100%;
+        top: 50%;
+    }
+}
+
+.chal-hidden {
+    color: rgba(133,133,133,0.56);
+    background-color: rgba(133,133,133,0.25)
+}
+
+.chal-cat {
+    padding-left: 6px;
+}

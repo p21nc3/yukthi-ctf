@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block stylesheet %}
+    <link rel='stylesheet' href='{{ request.script_root }}/static/home/css/typewriter.css'>
+{% endblock %}
+
+{% block preloader %}
+    <!--preloader-->
+        <div class="ip-header">
+            <div class="ip-loader" id="IDID" style="text-align: center">
+                <p id="loader-name">{{ gettext("Yukti CTF") }}</p>
+                <p id="loader-text"></p>
+                <img src="{{ request.script_root }}/static/home/img/preloader.svg" width="50" alt="">
+            </div>
+        </div>
+        <!--end preloader-->
+{% endblock %}
+
+
+{% block content %}
+
+    {% if welcome %}
+            <script>
+                window.onload = function() {
+                  swal({
+                  title: " {{ gettext("Welcome") + " " + session['username'] }}!",
+                  text: "Continue to <a href='/challenges' style='color:black;'>Challenges</button>",
+                  html: true
+                });
+                };
+
+            </script>
+    {% endif %}
+
+<div class="container content-home">
+
+        <div class="col-md-12 text-center">
+            <h1 class="WhiteText Glow ctf-name">{{ gettext('Yukti CTF') }}</h1>
+        </div>
+
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <h3 class="WhiteText typewriter ctf-text">{{ gettext("Building Tomorrow's Cyber Warriors") }}</h3>
+        </div>
+
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <a href="http://meity.gov.in/"><h5 class="WhiteText typewriter ctf-ministry">{{ gettext("Ministry of Electronics and IT") }}</h5></a>
+        </div>
+
+
+
+        <div class="col-md-12 text-center">
+            <a href="http://foss.amrita.ac.in/"><img src="{{ request.script_root }}/static/home/img/foss.png" width="70" alt="" hspace="20"></a>
+            <a href="http://bi0s.in/"><img src="{{ request.script_root }}/static/home/img/bi0s.png" width="70" alt="" hspace="20"></a>
+            <a href="https://www.amrita.edu/"><img src="{{ request.script_root }}/static/home/img/am.png" width="70" alt="" hspace="20"></a>
+            <a href="http://i4c.co.in/"><img src="{{ request.script_root }}/static/home/img/sih.png" width="70" alt="" hspace="20"></a>
+        </div>
+</div>
+
+
+{% endblock %}
+
+{% block script %}
+    <script src='{{ request.script_root }}/static/home/js/dist.js'></script>
+    <script src='{{ request.script_root }}/static/home/js/index.js'></script>
+    <script src='{{ request.script_root }}/static/home/js/demo.js'></script>
+    <script>
+        var typewriter = require('typewriter-js');
+        typewriter.prepare('.typewriter');
+        typewriter.type('.typewriter')
+            .then(function() {
+                return typewriter.type('.typewriter');
+            });
+        typewriter.type('.typewriter', {
+            delay: 1000 // milliseconds until next character
+        });
+    </script>
+{% endblock %}

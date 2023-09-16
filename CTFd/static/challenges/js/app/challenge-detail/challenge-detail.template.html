@@ -1,0 +1,145 @@
+<div class="challenge-data">
+    <h1 class="chal-text">{{ $ctrl.selection.name }}</h1>
+    <h5 class="chat-desc">{{ $ctrl.selection.description }}</h5>
+
+    <div class="fields clearfix">
+        <div class="flag-input">
+            <form class="flag-form" ng-if="$ctrl.selection.start != true" ng-submit="$ctrl.processForm(key, $ctrl.selection.id, $ctrl.nonce)" style="display: flex;flex-flow: row;">
+                <input class="flag-input" style="flex: 1 1 auto; width: 50%;" ng-model="key" type="text" required placeholder="Flag" aria-required="true">
+                <button class="flag-btn" style="flex: 1 1 auto;" type="submit" name="flag-btn">Submit</button>
+            </form>
+        </div>
+        <br></br>
+    </div>
+    <div class="files">
+        <div class="file" ng-repeat="path in $ctrl.selection.files">
+            <a href="/files/{{ path[1] }}" class="chal-score"><i class="fa fa-download fa-lg">{{ path[0] }}</i></a>
+        </div>
+    </div>
+
+      <p style="padding-top:3%">Hint : {{ $ctrl.selection.hint }}<p>
+
+
+      <a ng-if="$ctrl.selection.id === 1" style="padding-top:3%" data-toggle="modal" data-target="#myModal">Solution</a>
+
+
+
+      <p ng-if="$ctrl.response">
+        {{ $ctrl.response.data.message }}
+        <script>
+                window.onload = function() {
+                      swal({
+                      title: "Challenge submitted",
+                      text: "Continue to <a href='/challenges' style='color:black;'>Challenges</button>",
+                      html: true
+                    });
+                };
+
+            </script>
+      </p>
+
+</div>
+
+<style>
+    .flag-form {
+        background-color: rgba(255,255,255,.1);
+        border-bottom: 1px solid white;
+        border-right: 1px solid white;
+        font-size: 25px;
+        font-weight: 100;
+        width: 100%;
+        margin: 20px 0px 0px 0px;
+        overflow: hidden;
+    }
+    .flag-label {
+        text-align: center;
+        background-color: rgba(75,75,75,0);
+        width: auto;
+        display: inline-block;
+        font-weight: 100;
+        padding: 5px 15px 2px 15px;
+    }
+
+    .hint {
+        width:100%;
+        border:1px solid #d3d3d3;
+    }
+    .hint div {
+        width:100%;
+    }
+    .container .hint-header {
+        background-color:#d3d3d3;
+        padding: 2px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .hint .hint-content {
+        display: none;
+        padding : 5px;
+}
+
+    .flag-input {
+        background-color: rgba(75,75,75,0);
+        border: 0px;
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        display: inline-block;
+    }
+
+    .flag-btn {
+        display: inline-block;
+        background-color: rgba(255,255,255,1);
+        border: 0px;
+        color: black;
+        font-weight: 600;
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        padding: 8px 13px 8px 14px;
+        float: right;
+    }
+
+    .chal-text {
+        font-size: 40px;
+        font-weight: normal;
+        font-family: monospace;
+    }
+    .chat-desc {
+        font-size: 1.4em;
+    }
+
+    .modal-backdrop {
+      z-index: -1;
+    }
+</style>
+
+<script>
+    $(".hint-header").click(function() {
+      $('.hint-content').slideToggle().toggleClass('active');
+      if ($('.hint-content').hasClass('active')) {
+        $('.hint-header span').text('Collapse');
+      } else {
+        $('.hint-header span').text('Expand');
+      }
+    });
+    $('button').click(function(){
+        $(".hint-header").trigger('click');
+    })
+</script>
+
+    <!-- Modal -->
+  <div style="margin-top: 5%;" class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <iframe width="800" height="500px"
+            src="static/home/video/Caesar_Cipher.mp4">
+        </iframe>
+      </div>
+
+    </div>
+  </div>

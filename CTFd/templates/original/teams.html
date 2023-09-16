@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block content %}
+
+<div class="page-title">
+    <h1>{{ gettext ("Students") }}</h1>
+</div>
+<div class="container main-container ScrollOn">
+    <table id="teamsboard" class="table table-striped" style="border: 1px solid rgba(255,255,255,0.5); border-radius: 5px; border-collapse: unset; font-size: 1.25em;">
+        <thead id="teamsboard-head">
+            <tr>
+                <td style="padding: 30px;"><b>{{ gettext("Student") }}</b></td>
+                <td style="padding: 30px;"><b>{{ gettext("School/College") }}</b></td>
+                <td style="padding: 30px;"><b>{{ gettext("City") }}</b></td>
+                <td style="padding: 30px;"><b>{{ gettext("Class/Year") }}</b></td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for team in teams %}
+          {%if not team.admin and not team.mentor %}
+            <tr>
+                <td style="padding: 20px; background-color: transparent; border: none;">
+                {% if hide_scores() %}
+                    <span>{{ team.name }}</span>
+                {% else %}
+                    <a href="{{ request.script_root }}/team/{{ team.id }}">{{ team.fname }}</a>
+                {% endif %}
+                </td>
+                <td style="padding: 20px; background-color: transparent; border: none;"><span>{% if team.affiliation %}{{ team.affiliation }}{% endif %}</span></td>
+                <td style="padding: 20px; background-color: transparent; border: none;"><span>{% if team.city %}{{ team.city }}{% endif %}</span></td>
+                <td style="padding: 20px; background-color: transparent; border: none;" class="hidden-xs"><span>{% if team.year %}{{ team.year }}{% endif %}</span></td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+    {% if team_pages > 1 %}
+    <div class="text-center">Page
+        <br>
+        {% if curr_page != 1 %}<a href="{{ request.script_root }}/teams/{{ curr_page-1 }}">&lt;&lt;&lt;</a>{% endif %}
+        {% for page in range(1, team_pages + 1) %}
+            {% if curr_page != page %}
+                <a href="{{ request.script_root }}/teams/{{ page }}">{{ page }}</a>
+            {% else %}
+                <b>{{page}}</b>
+            {% endif %}
+        {% endfor %}
+        {% if curr_page != team_pages %}<a href="{{ request.script_root }}/teams/{{ curr_page+1 }}">&gt;&gt;&gt;</a>{% endif %}
+    <a href="{{ request.script_root }}">
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

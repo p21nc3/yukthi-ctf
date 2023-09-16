@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+    <style>
+    #login-container {
+        padding-left:  60px;
+        padding-right: 60px;
+    }
+
+    .done-row {
+        padding-top: 15px;
+        margin: 0px;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="page-title">
+    <h1>{{ gettext("Login") }}</h1>
+</div>
+<div class="container main-container" style="margin-top=10%"s>
+    <div class="row">
+        <div id="login-container" class="col-md-6 col-md-offset-3">
+            {% for error in errors %}
+                <div class="alert alert-danger alert-dismissable" role="alert">
+                  <span class="sr-only">Error:</span>
+                  {{ error }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+            {% endfor %}
+            <form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal form-group">
+                <input placeholder="{{ gettext("Username") }}" type="text" name="name" id="input-10" />
+                <input placeholder="{{ gettext("Password") }}" type="password" name="password" id="input-10" />
+                <input id="submit" type="submit" value="{{ gettext("Login") }}">
+
+                    <div class="col-md-6" style="padding-left:0px">
+                        <a class="pull-left align-text-to-button" href="{{ request.script_root }}/reset_password" style = " color:white">{{ gettext("Forgot your password?") }}</a>
+                    </div>
+                <input type="hidden" name="nonce" value="{{ nonce }}">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ request.script_root }}/static/{{ ctf_theme() }}/js/style.js"></script>
+{% endblock %}

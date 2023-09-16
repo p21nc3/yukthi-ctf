@@ -1,0 +1,73 @@
+ {% extends "base.html" %}
+
+{% block stylesheets %}
+    <style>
+    hr {
+        margin-top: 0px;
+        padding-bottom: 10px;
+    }
+    .row {
+        margin-bottom: 10px;
+    }
+    </style>
+
+
+{% endblock %}
+
+{% block content %}
+    <div class="page-title">
+        <h1>{{ gettext("Profile") }}</h1>
+    </div>
+<div class="container main-container ScrollOn">
+
+    <div class="row">
+        <div id="login-container" class="col-md-6 col-md-offset-3">
+            {% if success %}
+                <div class="alert alert-success alert-dismissable submit-row" role="alert">
+                    <strong>Success!</strong>
+                    Your profile has been updated
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+            {% else %}
+                {% for error in errors %}
+                <div class="submit-row">
+                    <div class="alert alert-danger alert-dismissable" role="alert">
+                      <span class="sr-only">Error:</span>
+                      {{ error }}
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+            {% if confirm_email %}
+                <div class="alert alert-info alert-dismissable submit-row" role="alert">
+                    Your email address isn't confirmed!
+                    Please check your email to confirm your email address.
+                    <br>
+                    <br>
+                    To have the confirmation email resent please <a href="{{ request.script_root }}/confirm">click
+                    here.</a>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                </div>
+            {% endif %}
+            <form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal form-group">
+              <input placeholder="{{ gettext("Username") }}" type="text" name="name" id="input-10" />
+              <input placeholder="{{ gettext("Email") }}" type="text" name="email" id="input-10" />
+              <input placeholder="{{ gettext("Current Password") }}" type="password" name="confirm" id="input-10" />
+              <input placeholder="{{ gettext("New Password") }}" type="password" name="password" id="input-10" />
+              <input placeholder="{{ gettext("Affiliation") }}" type="text" name="affiliation" id="input-10" />
+              <input placeholder="{{ gettext("City") }}" type="text" name="website" id="input-10" />
+              <input placeholder="{{ gettext("State") }}" type="text" name="country" id="input-10" />
+              <input placeholder="{{ gettext("Email") }}" type="text" name="email" id="input-10" />
+              <input id="submit" type="submit" value="{{ gettext("Update") }}">
+              <input type="hidden" name="nonce" value="{{ nonce }}">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ request.script_root }}/static/{{ ctf_theme() }}/js/style.js"></script>
+{% endblock %}

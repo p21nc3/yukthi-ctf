@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-title">
+    <h1>{{ gettext("Scoreboard") }}</h1>
+</div>
+<div class="container main-container ScrollOn">
+    {% if errors %}
+    <div class="container main-container">
+        <div id='errors' class="row">
+    {% for error in errors %}
+            <h1>{{ error }}</h1>
+    {% endfor %}
+        </div>
+    </div>
+    {% else %}
+
+        {% if score_frozen %}
+        <div class="container main-container">
+            <div class="row">
+                <h1>Scoreboard has been frozen.</h1>
+            </div>
+        </div>
+        {% endif %}
+
+    <div id="score-graph" class="js-plotly-plot"></div>
+    <br>
+
+    <table id="teamsboard" class="table table-striped" style="border: 1px solid rgba(255,255,255,0.5); border-radius: 5px; border-collapse: unset; font-size: 1.3em;">
+        <thead id="teamsboard-head">
+            <tr>
+                <td style="padding: 30px;"width="10px"><b>{{ gettext("Rank") }}</b>
+                </td>
+                <td style="padding: 30px;"><b>{{ gettext("Student") }}</b>
+                </td>
+                <td style="padding: 30px;"><b>{{ gettext("Score") }}</b>
+                </td>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for team in teams %}
+          {% if not team.admin and not team.mentor %}
+            <tr style="border-top: 1px solid white">
+                <td style="padding: 20px; background-color: transparent; border: none;">{{ loop.index }}</td>
+                <td style="padding: 20px; background-color: transparent; border: none;"><a href="{{ request.script_root }}/team/{{ team.teamid }}">{{ team.name }}</a>{{ team.fname }}</td>
+                <td style="padding: 20px; background-color: transparent; border: none;">{{ team.score }}</td>
+              </tr>
+          {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ request.script_root }}/static/{{ ctf_theme() }}/js/vendor/plotly.min.js"></script>
+    <script src="{{ request.script_root }}/static/{{ ctf_theme() }}/js/utils.js"></script>
+    <script src="{{ request.script_root }}/static/{{ ctf_theme() }}/js/scoreboard.js"></script>
+{% endblock %}

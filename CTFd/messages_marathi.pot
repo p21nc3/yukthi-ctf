@@ -1,0 +1,170 @@
+# Translations template for PROJECT.
+# Copyright (C) 2017 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-04-02 09:55+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: templates/original/about.html:16 templates/original/base.html:57
+msgid "About"
+msgstr "CTF काय आहे"
+
+#: templates/original/about.html:20
+msgid "A recent report has revealed that a 0.6 percent of graduate students are currently working in cyber security while cyber attacks and breaches are manifesting in the country. In order to encourage the youth to participate, they need to be taught at a young age about the importance of computer security.A lot of research have been proven to be the best way to approach this is Capture the Flag style contests. In cyber security, Capture the Flag is a computer security contest.These contests typically simulate real life scenarios that enable participants to develop real world security skills. Many of the countries like USA and China have realized the need for cyber security education and are conducting CTF contests for school students. Having realized the dire need for such a training culture in India, Team YUKTI has designed an online customizable Capture the Flag style contest specifically designed to introduce cyber security awareness and training  for students in Technical Institutions."
+
+msgstr "अलीकडील अहवाल पदवीधर विद्यार्थी 0.6  टक्केवारी  सध्या सायबर सुरक्षा मध्ये काम करत आहेत, असे निदर्शनास आले आहे. सायबर हल्ले आणि धोका देशात होतात आहेत. सहभागी तरुणांना प्रोत्साहित करण्यासाठी, ते संगणकावर सुरक्षा विषयक एक तरुण वयात शिकवले करणे आवश्यक आहे. संशोधन भरपूर हा ध्वज शैली स्पर्धा कॅप्चर आहे संपर्क सर्वोत्तम मार्ग असल्याचे सिद्ध झाले आहे. सायबर सुरक्षा मध्ये, 'कॅप्चर द फ्लॅग' किंवा CTF एक संगणक सुरक्षा स्पर्धा आहे.या स्पर्धा विशेषत: वास्तविक जगात सुरक्षा कौशल्य विकसित करण्यासाठी सहभागी सक्षम वास्तविक जीवनात परिस्थिती आव आणणे. अमेरिका आणि चीन सारख्या देशात अनेक सायबर सुरक्षा शिक्षणाची गरज लक्षात आहे आणि शाळा विद्यार्थ्यांना CTF स्पर्धा आयोजन करीत आहोत. लक्षात येत भारतात अशा प्रशिक्षण संस्कृती नितांत आवश्यकता टीम YUKTI विशेषतः तांत्रिक संस्था विद्यार्थ्यांना सायबर सुरक्षा जागरूकता आणि प्रशिक्षण परिचय डिझाइन केलेले ऑनलाईन सानुकूल CTF शैली स्पर्धा रचना करत आहे"
+
+
+#: templates/original/base.html:47 templates/original/index.html:10
+#: templates/original/index.html:37
+msgid "Yukti CTF"
+msgstr "युक्ति CTF"
+
+#: templates/original/base.html:54 templates/original/my_students.html:9
+#: templates/original/teams.html:9
+msgid "Students"
+msgstr "विद्यार्थी"
+
+#: templates/original/base.html:55 templates/original/scoreboard.html:5
+msgid "Scoreboard"
+msgstr " स्कोअरबोर्ड"
+
+#: templates/original/base.html:56
+msgid "Challenges"
+msgstr "स्पर्धा प्रश्न"
+
+#: templates/original/base.html:64
+msgid "Admin"
+msgstr "प्रशासन"
+
+#: templates/original/base.html:67
+msgid "My Students"
+msgstr "माझे विद्यार्थी"
+
+#: templates/original/base.html:70 templates/original/profile.html:19
+msgid "Profile"
+msgstr "प्रोफाइल"
+
+#: templates/original/base.html:71
+msgid "Logout"
+msgstr "लॉग ऑफ करा"
+
+#: templates/original/base.html:74 templates/original/register.html:8
+msgid "Register"
+msgstr "नोंदणी"
+
+#: templates/original/base.html:77 templates/original/login.html:19
+msgid "Login"
+msgstr "लॉग-इन"
+
+#: templates/original/confirm.html:20
+msgid "Confirm"
+msgstr "पुष्टी"
+
+#: templates/original/index.html:25
+msgid "Welcome back"
+msgstr "पुन्हा आपले स्वागत आहे"
+
+#: templates/original/index.html:41
+msgid "Building Tomorrow's Cyber Warriors"
+msgstr " निर्माण - भावीश्याचे सायबर योद्धा"
+
+#: templates/original/index.html:45
+msgid "Ministry of Electronics and IT"
+msgstr " इलेक्ट्रॉनिक्स आणि आयटी मंत्रालय "
+
+#: templates/original/index.html:59
+msgid "English"
+msgstr "English"
+
+#: templates/original/index.html:60
+msgid "Hindi"
+msgstr "हिंदी"
+
+#: templates/original/login.html:36 templates/original/login.html:38
+#: templates/original/register.html:91
+msgid "Username"
+msgstr "वापरकर्ता नाव"
+
+#: templates/original/login.html:46 templates/original/login.html:48
+#: templates/original/register.html:111
+msgid "Password"
+msgstr "पासवर्ड"
+
+#: templates/original/login.html:54
+msgid "Forgot your password?"
+msgstr " आपला संकेतशब्द विसरलात?"
+
+#: templates/original/login.html:57 templates/original/register.html:120
+msgid "Submit"
+msgstr "सबमिट करा"
+
+#: templates/original/register.html:25
+msgid "Full Name"
+msgstr "पूर्ण नाव"
+
+#: templates/original/register.html:35
+msgid "Affliliation"
+msgstr "संलग्नीकरण"
+
+#: templates/original/register.html:45 templates/original/teams.html:18
+msgid "Class/Year"
+msgstr "वर्ग / वर्ष"
+
+#: templates/original/register.html:55 templates/original/scoreboard.html:38
+#: templates/original/teams.html:17
+msgid "City"
+msgstr "शहर"
+
+#: templates/original/register.html:65
+msgid "Gender"
+msgstr "लिंग"
+
+#: templates/original/register.html:78
+msgid "Student/Mentor"
+msgstr "विद्यार्थी / गुरू"
+
+#: templates/original/register.html:101
+msgid "Email"
+msgstr "ई-मेल"
+
+#: templates/original/reset_password.html:9
+msgid "Reset Password"
+msgstr "पासवर्ड रीसेट करा"
+
+#: templates/original/scoreboard.html:32
+msgid "Rank"
+msgstr "पदवी स्थान"
+
+#: templates/original/scoreboard.html:34 templates/original/teams.html:15
+msgid "Student"
+msgstr "विद्यार्थी"
+
+#: templates/original/scoreboard.html:36
+msgid "Affiliation"
+msgstr "संलग्नीकरण"
+
+#: templates/original/scoreboard.html:40
+msgid "Score"
+msgstr "गुण"
+
+#: templates/original/setup.html:8
+msgid "Setup"
+msgstr "सेटअप"
+
+#: templates/original/teams.html:16
+msgid "School/College"
+msgstr "शाळा / कॉलेज"
+
